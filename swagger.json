@@ -98,6 +98,36 @@
                     }
 				}
 			}
+		},
+		"/@864/message": {
+			"post": {
+				"tags": ["sales order"],
+				"summary": "Insert or update sales orders",
+				"description": "",
+				"operationId": "postpo",
+				"consumes": ["application/json", "application/xml"],
+				"produces": ["application/json", "application/xml"],
+				"parameters": [{
+					"in": "body",
+					"name": "body",
+					"description": "Sales orders to insert or update",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/salesorder"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					},
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+				}
+			}
 		}
 	},
 	"securityDefinitions": {
@@ -236,10 +266,37 @@
 			"xml": {
 				"name": "order_lines"
 			}
+		},
+		"salesorder": {
+			"type": "object",
+			"required": ["product_reference"],
+			"properties": {
+				"update_code": {
+					"type": "string",
+                    "enum": ["NEW", "INSERT_AND_UPDATE", "DELETE"]
+				},
+				"order_reference": {
+					"type": "string",
+                    "maxLength": 50,
+                    "example": "example-order-ref-01"
+				}
+			}
+		},
+
+		"relation": {
+			"type": "object",
+			"required": ["relation_type", "reference", "name"],
+			"properties": {
+				"relation_type": {
+					"type": "string",
+                    "enum": ["pod", "customer", "invoice", "sender", "pickup"]
+				},
+				"reference": {
+					"type": "string",
+					"example": "example-relation-ref-01"
+				}
+			}
 		}
-	},
-	"externalDocs": {
-		"description": "Find out more about Swagger",
-		"url": "http://swagger.io"
+		
 	}
 }
