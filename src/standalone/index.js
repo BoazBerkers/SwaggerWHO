@@ -12,13 +12,5 @@ export default [
     return {
       components: { StandaloneLayout }
     }
-  },
-  SafeRenderPlugin({
-    fullOverride: true,
-    componentList: [
-      "Topbar",
-      "StandaloneLayout",
-      "onlineValidatorBadge"
-    ]
-  })
+  }
 ]
