@@ -104,7 +104,7 @@
 				"tags": ["sales order"],
 				"summary": "Insert or update sales orders",
 				"description": "",
-				"operationId": "postpo",
+				"operationId": "postso",
 				"consumes": ["application/json", "application/xml"],
 				"produces": ["application/json", "application/xml"],
 				"parameters": [{
