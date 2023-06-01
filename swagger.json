@@ -1,31 +1,31 @@
 {
-	"swagger": "2.0", 
-	"info": {
-		"description": "This is the API documentation for Warehouse Online",
-		"version": "1.0.0",
-		"title": "Warehouse Online",
-		"termsOfService": "https://www.warehouse-online.nl/over-ons/general-conditions",
-		"contact": {
-			"email": "helpdesk@realtimesolutions.nl"
-		},
-		"license": {
-			"name": "!!!!!!!!!Apache 2.0",
-			"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-		}
-	},
-	"host": "p1.realtime.eu",
-	"basePath": "/rest/dataflow",
-	"tags": [{
-		"name": "product",
-		"description": "Insert or update products"
-	}, {
-		"name": "purchase order",
-		"description": "Insert or update purchase orders",
-		"externalDocs": {
-			"description": "evt. link naar externe documentatie",
-			"url": "http://who.nl"
-		}
-	}, {
+    "swagger": "2.0",
+    "info": {
+        "description": "This is the API documentation for Warehouse Online",
+        "version": "1.0.0",
+        "title": "Warehouse Online",
+        "termsOfService": "https://www.warehouse-online.nl/over-ons/general-conditions",
+        "contact": {
+            "email": "helpdesk@realtimesolutions.nl"
+        },
+        "license": {
+            "name": "!!!!!!!!!Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "p1.realtime.eu",
+    "basePath": "/rest/dataflow",
+    "tags": [{
+        "name": "product",
+        "description": "Insert or update products"
+    }, {
+        "name": "purchase order",
+        "description": "Insert or update purchase orders",
+        "externalDocs": {
+            "description": "evt. link naar externe documentatie",
+            "url": "http://who.nl"
+        }
+    }, {
         "name": "sales order",
         "description": "Insert or update sales orders"
     }, {
@@ -33,219 +33,286 @@
         "description": "Insert or update relations"
     }],
 
-	"schemes": ["https"],
+    "schemes": ["https"],
 
-	"paths": {
-		"/@817/message": {
-			"post": {
-				"tags": ["product"],
-				"summary": "Insert or update products",
-				"description": "",
-				"operationId": "postproduct",
-				"consumes": ["application/json", "application/xml"],
-				"produces": ["application/json", "application/xml"],
-				"parameters": [{
-					"in": "body",
-					"name": "body",
-					"description": "Products to insert or update",
-					"required": true,
-					"schema": {
-						"$ref": "#/definitions/product"
-					}
-				}],
-				"responses": {
-					"200": {
-						"description": "OK"
-					},
+    "paths": {
+        "/@817/message": {
+            "post": {
+                "tags": ["product"],
+                "summary": "Insert or update products",
+                "description": "",
+                "operationId": "postproduct",
+                "consumes": ["application/json", "application/xml"],
+                "produces": ["application/json", "application/xml"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Products to insert or update",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/product"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
                     "400": {
                         "description": "Bad request"
                     },
                     "401": {
                         "description": "Unauthorized"
                     }
-				},
-				"security": [{
-					"basic": []
-				}]
-			}
-		},
+                },
+                "security": [{
+                    "basic": []
+                }]
+            }
+        },
         "/@820/message": {
-			"post": {
-				"tags": ["purchase order"],
-				"summary": "Insert or update purchase orders",
-				"description": "",
-				"operationId": "postpo",
-				"consumes": ["application/json", "application/xml"],
-				"produces": ["application/json", "application/xml"],
-				"parameters": [{
-					"in": "body",
-					"name": "body",
-					"description": "Purchase orders to insert or update",
-					"required": true,
-					"schema": {
-						"$ref": "#/definitions/purchaseorder"
-					}
-				}],
-				"responses": {
-					"200": {
-						"description": "OK"
-					},
+            "post": {
+                "tags": ["purchase order"],
+                "summary": "Insert or update purchase orders",
+                "description": "",
+                "operationId": "postpo",
+                "consumes": ["application/json", "application/xml"],
+                "produces": ["application/json", "application/xml"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Purchase orders to insert or update",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/purchaseorder"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
                     "400": {
                         "description": "Bad request"
                     },
                     "401": {
                         "description": "Unauthorized"
                     }
-				}
-			}
-		},
-		"/@864/message": {
-			"post": {
-				"tags": ["sales order"],
-				"summary": "Insert or update sales orders",
-				"description": "",
-				"operationId": "postso",
-				"consumes": ["application/json", "application/xml"],
-				"produces": ["application/json", "application/xml"],
-				"parameters": [{
-					"in": "body",
-					"name": "body",
-					"description": "Sales orders to insert or update",
-					"required": true,
-					"schema": {
-						"$ref": "#/definitions/salesorder"
-					}
-				}],
-				"responses": {
-					"200": {
-						"description": "OK"
-					},
+                }
+            }
+        },
+        "/@864/message": {
+            "post": {
+                "tags": ["sales order"],
+                "summary": "Insert or update sales orders",
+                "description": "",
+                "operationId": "postso",
+                "consumes": ["application/json", "application/xml"],
+                "produces": ["application/json", "application/xml"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Sales orders to insert or update",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/salesorder"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
                     "400": {
                         "description": "Bad request"
                     },
                     "401": {
                         "description": "Unauthorized"
                     }
-				}
-			}
-		}
-	},
-	"securityDefinitions": {
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
         "basicAuth": {
             "type": "basic"
         }
-	},
+    },
 
     "security": [{
         "basicAuth": []
     }],
 
-	"definitions": {
-		"ApiResponse": {
-			"type": "object",
-			"properties": {
-				"code": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"type": {
-					"type": "string"
-				},
-				"message": {
-					"type": "string"
-				}
-			}
-		},
-		"product": {
-			"type": "object",
-			"required": ["product_reference"],
-			"properties": {
-				"product_reference": {
-					"type": "string",
+    "definitions": {
+        "ApiResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "product": {
+            "type": "object",
+            "required": ["product_reference"],
+            "properties": {
+                "owner_reference": {
+                    "type": "string",
+                    "example": "example-owner-ref"
+                },
+                "product_reference": {
+                    "type": "string",
                     "maxLength": 50,
                     "example": "example-ref-01"
-				},
-				"product_description_1": {
-					"type": "string",
+                },
+                "article_reference": {
+                    "type": "string",
+                    "example": "example-article-ref"
+                },
+                "product_variant": {
+                    "type": "string",
+                    "example": "example-variant"
+                },
+                "product_sub_variant": {
+                    "type": "string",
+                    "example": "example-sub-variant"
+                },
+                "article_description": {
+                    "type": "string",
+                    "example": "example-article-desc"
+                },
+                "product_description_1": {
+                    "type": "string",
                     "maxLength": 250,
-					"example": "example-description-01"
-				},
-				"product_ids": {
-					"type": "array",
-					"xml": {
-						"wrapped": true
-					},
-					"items": {
-						"xml": {
-							"name": "tag"
-						},
-						"$ref": "#/definitions/product_ids"
-					}
-				}
-			},
-			"xml": {
-				"name": "product"
-			}
-		},
-		"product_ids": {
-			"type": "object",
-			"properties": {
-				"id": {
-					"type": "string",
-					"maxLength": 30,
+                    "example": "example-description-01"
+                },
+                "product_description_2": {
+                    "type": "string",
+                    "maxLength": 250,
+                    "example": "example-description-02"
+                },
+                "product_short_description": {
+                    "type": "string",
+                    "maxLength": 30,
+                    "example": "example-short-description"
+                },
+                "product_phonetic_description": {
+                    "type": "string",
+                    "maxLength": 30,
+                    "example": "example-phonetic-description"
+                },
+                "set_product_group_owner": {
+                    "type": "string",
+                    "example": "set-product-group"
+                },
+                "confirm_product_group_owner": {
+                    "type": "string",
+                    "example": "confirm-product-group"
+                },
+                "composite_product": {
+                    "type": "string",
+                    "example": "composite-product"
+                },
+                "image_uri": {
+                    "type": "string",
+                    "example": "example-uri"
+                },
+                "sales_price": {
+                    "type": "float",
+                    "example": 2.49
+                },
+                "accounting_price": {
+                    "type": "float",
+                    "example": 2.49
+                },
+                "currency_reference": {
+                    "type": "string",
+                    "example": "EUR"
+                },
+                "including_vat": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "product_ids": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#/definitions/product_ids"
+                    }
+                }
+            },
+            "xml": {
+                "name": "product"
+            }
+        },
+        "product_ids": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "maxLength": 30,
                     "example": "exampleID"
-				},
-				"type": {
-					"type": "string",
+                },
+                "type": {
+                    "type": "string",
                     "enum": ["REF", "EAN"]
-				}
-			},
-			"xml": {
-				"name": "product_ids"
-			}
-		},
+                }
+            },
+            "xml": {
+                "name": "product_ids"
+            }
+        },
         "purchaseorder": {
-			"type": "object",
-			"required": ["product_reference"],
-			"properties": {
-				"order_reference": {
-					"type": "string",
+            "type": "object",
+            "required": ["product_reference"],
+            "properties": {
+                "order_reference": {
+                    "type": "string",
                     "maxLength": 50,
                     "example": "example-order-ref-01"
-				},
-				"order_type": {
-					"type": "string",
-					"enum": ["PO", "RSO"]
-				},
-				"order_lines": {
-					"type": "array",
-					"xml": {
-						"wrapped": true
-					},
-					"items": {
-						"xml": {
-							"name": "tag"
-						},
-						"$ref": "#/definitions/order_lines"
-					}
-				}
-			},
-			"xml": {
-				"name": "product"
-			}
-		},
-		"order_lines": {
-			"type": "object",
-			"properties": {
-				"update_code": {
-					"type": "string",
+                },
+                "order_type": {
+                    "type": "string",
+                    "enum": ["PO", "RSO"]
+                },
+                "order_lines": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#/definitions/order_lines"
+                    }
+                }
+            },
+            "xml": {
+                "name": "product"
+            }
+        },
+        "order_lines": {
+            "type": "object",
+            "properties": {
+                "update_code": {
+                    "type": "string",
                     "enum": ["NEW", "INSERT_AND_UPDATE", "DELETE"]
-				},
-				"order_reference": {
-					"type": "string",
+                },
+                "order_reference": {
+                    "type": "string",
                     "maxLength": 50,
                     "example": "example-order-ref-01"
-				},
+                },
                 "line_reference": {
                     "type": "string",
                     "maxLength": 50,
@@ -262,41 +329,41 @@
                     "maximum": 99999,
                     "example": 10
                 }
-			},
-			"xml": {
-				"name": "order_lines"
-			}
-		},
-		"salesorder": {
-			"type": "object",
-			"required": ["product_reference"],
-			"properties": {
-				"update_code": {
-					"type": "string",
+            },
+            "xml": {
+                "name": "order_lines"
+            }
+        },
+        "salesorder": {
+            "type": "object",
+            "required": ["product_reference"],
+            "properties": {
+                "update_code": {
+                    "type": "string",
                     "enum": ["NEW", "INSERT_AND_UPDATE", "DELETE"]
-				},
-				"order_reference": {
-					"type": "string",
+                },
+                "order_reference": {
+                    "type": "string",
                     "maxLength": 50,
                     "example": "example-order-ref-01"
-				}
-			}
-		},
+                }
+            }
+        },
 
-		"relation": {
-			"type": "object",
-			"required": ["relation_type", "reference", "name"],
-			"properties": {
-				"relation_type": {
-					"type": "string",
+        "relation": {
+            "type": "object",
+            "required": ["relation_type", "reference", "name"],
+            "properties": {
+                "relation_type": {
+                    "type": "string",
                     "enum": ["pod", "customer", "invoice", "sender", "pickup"]
-				},
-				"reference": {
-					"type": "string",
-					"example": "example-relation-ref-01"
-				}
-			}
-		}
-		
-	}
+                },
+                "reference": {
+                    "type": "string",
+                    "example": "example-relation-ref-01"
+                }
+            }
+        }
+
+    }
 }
