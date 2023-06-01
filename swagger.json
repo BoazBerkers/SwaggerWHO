@@ -13,7 +13,7 @@
 			"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
 		}
 	},
-	"host": "p1.realtime.eu",
+	"host": "https://p1.realtime.eu",
 	"basePath": "/rest/dataflow",
 	"tags": [{
 		"name": "product",
