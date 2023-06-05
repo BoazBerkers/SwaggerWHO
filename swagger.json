@@ -161,8 +161,7 @@
             "required": ["product_reference"],
             "properties": {
                 "owner_reference": {
-                    "type": "string",
-                    "example": "example-owner-ref"
+                    "$ref": "#definitions/owner_reference"
                 },
                 "product_reference": {
                     "type": "string",
@@ -237,6 +236,50 @@
                     "type": "boolean",
                     "example": true
                 },
+                "vat_code": {
+                    "type": "string",
+                    "example": "example-vat-code"
+                },
+                "location_reference": {
+                    "type": "string",
+                    "example": "example-location"
+                },
+                "minimum_stock": {
+                    "type": "float",
+                    "example": 1
+                },
+                "maximum_stock": {
+                    "type": "float",
+                    "example": 999
+                },
+                "weight": {
+                    "type": "integer",
+                    "example": 5000
+                },
+                "weight_unity": {
+                    "type": "integer",
+                    "enum": [0, 1, 2, 3]
+                },
+                "shelf_life_warehouse": {
+                    "type": "integer",
+                    "example": 90
+                },
+                "shelf_life_total": {
+                    "type": "integer",
+                    "example": 365
+                },
+                "batch_code_prefix": {
+                    "type": "string",
+                    "example": "AB12"
+                },
+                "type_of_picking": {
+                    "type": "string",
+                    "example": "1"
+                },
+                "type_of_replenishment": {
+                    "type": "string",
+                    "example": "2"
+                },
                 "product_ids": {
                     "type": "array",
                     "xml": {
@@ -247,6 +290,42 @@
                             "name": "tag"
                         },
                         "$ref": "#/definitions/product_ids"
+                    }
+                },
+                "product_groups": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#definitions/product_groups"
+                    }
+                },
+                "supplier_conditions": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#definitions/supplier_conditions"
+                    }
+                },
+                "properties": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#definitions/properties"
                     }
                 }
             },
@@ -271,10 +350,71 @@
                 "name": "product_ids"
             }
         },
+        "product_groups": {
+            "type": "object",
+            "properties": {
+                "product_group_reference": {
+                    "type": "string",
+                    "example": "example-prod-group-ref"
+                },
+                "product_group_description": {
+                    "type": "string",
+                    "example": "example-prod-group-desc"
+                },
+                "single_wave_products": {
+                    "type": "string",
+                    "example": "1"
+                },
+                "product_group_sorting_code": {
+                    "type": "string",
+                    "example": "example-prod-group-sort-code"
+                },
+                "prefix_reference_with_master": {
+                    "type": "string",
+                    "example": "22A"
+                }
+            }
+        },
+        "supplier_conditions": {
+            "type": "object",
+            "properties": {
+                "supplier_reference": {
+                    "type": "string",
+                    "example": "example-supplier"
+                },
+                "supplier_product_reference": {
+                    "type": "string",
+                    "example": "example-supplier-product-ref"
+                },
+                "purchase_price": {
+                    "type": "float",
+                    "example": 1.49
+                },
+                "order_quantity": {
+                    "type": "string",
+                    "example": "12"
+                },
+                "minimum_order_size": {
+                    "type": "string",
+                    "example": "6"
+                },
+                "delivery_time": {
+                    "type": "string",
+                    "example": "60"
+                },
+                "ordering_formula": {
+                    "type": "string",
+                    "example": "example-ordering-formula"
+                }
+            }
+        },
         "purchaseorder": {
             "type": "object",
             "required": ["product_reference"],
             "properties": {
+                "owner_reference": {
+                    "$ref": "#definitions/owner_reference"
+                },
                 "order_reference": {
                     "type": "string",
                     "maxLength": 50,
@@ -283,6 +423,50 @@
                 "order_type": {
                     "type": "string",
                     "enum": ["PO", "RSO"]
+                },
+                "warehouse_reference": {
+                    "type": "string",
+                    "example": "example-warehouse-ref"
+                },
+                "expected_arrival_date": {
+                    "type": "string",
+                    "example": "2023-01-01"
+                },
+                "order_description": {
+                    "type": "string",
+                    "example": "example-order-desc"
+                },
+                "process_type_reference": {
+                    "type": "string",
+                    "example": "IN01"
+                },
+                "cost_centre_reference": {
+                    "type": "string",
+                    "example": "example-cost-centre-ref"
+                },
+                "auto_close_allowed": {
+                    "type": "string",
+                    "example": "Yes"
+                },
+                "status": {
+                    "type": "string",
+                    "example": "processing"
+                },
+                "reservation_reference": {
+                    "type": "string",
+                    "example": "example-res-ref"
+                },
+                "supplier": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#/definitions/relation"
+                    }
                 },
                 "order_lines": {
                     "type": "array",
@@ -356,14 +540,38 @@
             "properties": {
                 "relation_type": {
                     "type": "string",
-                    "enum": ["pod", "customer", "invoice", "sender", "pickup"]
+                    "enum": ["supplier", "pod", "customer", "invoice", "sender", "pickup"]
+                },
+                "update_code": {
+                    "type": "string",
+                    "example": "NEW"
                 },
                 "reference": {
                     "type": "string",
                     "example": "example-relation-ref-01"
                 }
             }
-        }
+        },
+        "properties": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "property-name"
+                },
+                "value": {
+                    "type": "string",
+                    "example": "property-value"
+                }
+            },
+            "xml": {
+                "name": "product_ids"
+            }
+        },
 
+        "owner_reference": {
+            "type": "string",
+            "example": "example-owner-ref"
+        }
     }
 }

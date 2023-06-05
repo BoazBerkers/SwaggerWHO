@@ -10261,16 +10261,6 @@
 
 /*Custom CSS */
 
-.topbar-wrapper span:after {
-    content: 'mylogo';
-    color: #f0f0f0;
-    visibility: visible;
-    display: block;
-    position: absolute;
-    padding: 5px;
-    top: 2px;
-}
-
 .swagger-ui .topbar {
     background-color: #fff;
 }
