@@ -549,11 +549,119 @@
                 },
                 "update_code": {
                     "type": "string",
-                    "example": "NEW"
+                    "example": "NEW",
+                    "enum": ["NEW", "INSERT_AND_UPDATE"]
                 },
                 "reference": {
                     "type": "string",
                     "example": "example-relation-ref-01"
+                },
+                "name": {
+                    "type": "string",
+                    "example": "example-relation-name"
+                },
+                "contact_name": {
+                    "type": "string",
+                    "example": "John Doe"
+                },
+                "company_name": {
+                    "type": "string",
+                    "example": "example-company-name"
+                },
+                "street_name": {
+                    "type": "string",
+                    "maxLength": 50,
+                    "example": "example-street"
+                },
+                "house_number": {
+                    "type": "string",
+                    "example": "123"
+                },
+                "house_number_extension": {
+                    "type": "string",
+                    "example": "A-C"
+                },
+                "address_line_2": {
+                    "type": "string",
+                    "example": "example-extra-address-line"
+                },
+                "address_line_3": {
+                    "type": "string",
+                    "example": "1st floor"
+                },
+                "zip_code": {
+                    "type": "string",
+                    "example": "1234AB"
+                },
+                "city": {
+                    "type": "string",
+                    "example": "Eindhoven"
+                },
+                "state": {
+                    "type": "string",
+                    "example": "example-state"
+                },
+                "country_reference": {
+                    "type": "string",
+                    "format": "ISO-3166",
+                    "example": "NL"
+                },
+                "po_box_number": {
+                    "type": "string",
+                    "example": "123456789"
+                },
+                "po_box_zip_code": {
+                    "type": "string",
+                    "example": "1122AA"
+                },
+                "po_box_city": {
+                    "type": "string",
+                    "example": "Eindhoven"
+                },
+                "telephone_number": {
+                    "type": "string",
+                    "example": "+31 40 304 6330"
+                },
+                "mobile_number": {
+                    "type": "string",
+                    "example": "+316 123 12 123"
+                },
+                "fax_number": {
+                    "type": "string",
+                    "example": "+31-208-1234567"
+                },
+                "email_address": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "john.doe@example.com"
+                },
+                "gln_code": {
+                    "type": "string",
+                    "example": "0847976000005"
+                },
+                "vat_number": {
+                    "type": "string",
+                    "example": "NL000099998B57"
+                },
+                "address_type": {
+                    "type": "string",
+                    "maxLength": 1,
+                    "example": "C",
+                    "enum": ["C", "P"],
+                    "description": "C = Customer, P = Private"
+
+                },
+                "bank_account": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#/definitions/bank_account"
+                    }
                 }
             }
         },
@@ -577,6 +685,33 @@
         "owner_reference": {
             "type": "string",
             "example": "example-owner-ref"
+        },
+
+        "bank_account": {
+            "type": "object",
+            "properties": {
+                "update_code": {
+                    "type": "string",
+                    "example": "NEW",
+                    "enum": ["NEW", "INSERT_AND_UPDATE"]
+                },
+                "reference": {
+                    "type": "string",
+                    "example": "example-bank-account-ref"
+                },
+                "holder_name": {
+                    "type": "string",
+                    "example": "example-bank-holder"
+                },
+                "iban": {
+                    "type": "string",
+                    "example": "NL02ABNA0123456789"
+                },
+                "bic": {
+                    "type": "string",
+                    "example": "ABNANL2A"
+                }
+            }
         }
     }
 }
