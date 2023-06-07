@@ -221,7 +221,8 @@
                     "example": "example-uri"
                 },
                 "sales_price": {
-                    "type": "float",
+                    "type": "number",
+                    "format": "double",
                     "example": 2.49
                 },
                 "accounting_price": {
@@ -246,11 +247,13 @@
                     "example": "example-location"
                 },
                 "minimum_stock": {
-                    "type": "float",
+                    "type": "number",
+                    "format": "double",
                     "example": 1
                 },
                 "maximum_stock": {
-                    "type": "float",
+                    "type": "number",
+                    "format": "double",
                     "example": 999
                 },
                 "weight": {
@@ -388,7 +391,8 @@
                     "example": "example-supplier-product-ref"
                 },
                 "purchase_price": {
-                    "type": "float",
+                    "type": "number",
+                    "format": "double",
                     "example": 1.49
                 },
                 "order_quantity": {
