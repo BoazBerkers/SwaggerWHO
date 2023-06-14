@@ -3,7 +3,7 @@
     "info": {
         "description": "This is the API documentation for Warehouse Online",
         "version": "1.0.0",
-        "title": "Warehouse Online",
+        "title": "Warehouse Online - API Documentation",
         "termsOfService": "https://www.warehouse-online.nl/over-ons/general-conditions",
         "contact": {
             "email": "helpdesk@realtimesolutions.nl"
@@ -63,10 +63,7 @@
                     "401": {
                         "description": "Unauthorized"
                     }
-                },
-                "security": [{
-                    "basic": []
-                }]
+                }
             }
         },
         "/@820/message": {
@@ -161,7 +158,8 @@
             "required": ["product_reference"],
             "properties": {
                 "owner_reference": {
-                    "$ref": "#definitions/owner_reference"
+                    "type": "string",
+                    "example": "example-owner-ref"
                 },
                 "product_reference": {
                     "type": "string",
@@ -418,7 +416,8 @@
             "required": ["product_reference"],
             "properties": {
                 "owner_reference": {
-                    "$ref": "#definitions/owner_reference"
+                    "type": "string",
+                    "example": "example-owner-ref"
                 },
                 "order_reference": {
                     "type": "string",
@@ -482,7 +481,7 @@
                         "xml": {
                             "name": "tag"
                         },
-                        "$ref": "#/definitions/order_lines"
+                        "$ref": "#/definitions/purchase_order_lines"
                     }
                 }
             },
@@ -490,7 +489,7 @@
                 "name": "product"
             }
         },
-        "order_lines": {
+        "purchase_order_lines": {
             "type": "object",
             "properties": {
                 "update_code": {
@@ -507,16 +506,56 @@
                     "maxLength": 50,
                     "example": "example-line-ref-01"
                 },
+                "line_description": {
+                    "type": "string",
+                    "example": "example-line-desc-01"
+                },
                 "product_reference": {
                     "type": "string",
                     "maxLength": 50,
                     "example": "example-ref-01"
+                },
+                "base_product_reference": {
+                    "type": "string",
+                    "example": "base-product-ref"
+                },
+                "product_variant": {
+                    "type": "string",
+                    "example": "example-variant-01"
+                },
+                "product_sub_variant": {
+                    "type": "string",
+                    "example": "example-sub-variant"
+                },
+                "packaging_reference": {
+                    "type": "string",
+                    "example": "example-packaging-ref"
+                },
+                "reservation_reference": {
+                    "type": "string",
+                    "example": "example-res-ref"
+                },
+                "section_reference": {
+                    "type": "string",
+                    "example": "example-section-ref"
                 },
                 "order_line_quantity": {
                     "type": "integer",
                     "format": "int32",
                     "maximum": 99999,
                     "example": 10
+                },
+                "properties": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#definitions/properties"
+                    }
                 }
             },
             "xml": {
@@ -680,11 +719,6 @@
             "xml": {
                 "name": "product_ids"
             }
-        },
-
-        "owner_reference": {
-            "type": "string",
-            "example": "example-owner-ref"
         },
 
         "bank_account": {

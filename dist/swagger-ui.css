@@ -10259,8 +10259,8 @@
 }
 
 
-/*Custom CSS */
-
+/*Custom CSS WHO */
+/* 
 .swagger-ui .topbar {
     background-color: #fff;
 }
@@ -10269,5 +10269,40 @@
     content: url('who-logo.png');
 }
 
+.swagger-ui .info .title {
+    color: #1a90f4;
+}
 
+.swagger-ui .info .title small {
+    background: #1a90f4;
+}
+
+.swagger-ui .topbar .download-url-wrapper input[type=text] {
+    border: 2px solid #1a90f4;
+}
+
+.swagger-ui .topbar .download-url-wrapper .select-label select {
+    border: 2px solid #1a90f4;
+}
+
+.swagger-ui .topbar .download-url-wrapper .download-url-button {
+    background: #1a90f4;
+}
+
+.swagger-ui .opblock.opblock-post {
+    background: rgba(26, 144, 244, .1);
+    border-color: #1a90f4
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary-method {
+    background: #1a90f4
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary {
+    border-color: #1a90f4
+}
+
+.swagger-ui .opblock.opblock-post .tab-header .tab-item.active h4 span:after {
+    background: #1a90f4
+} */
 /*# sourceMappingURL=swagger-ui.css.map*/
