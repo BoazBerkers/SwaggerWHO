@@ -13,8 +13,8 @@
             "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         }
     },
-    "host": "p1.realtime.eu",
-    "basePath": "/rest/dataflow",
+    "host": "wms-intake.nl",
+    "basePath": "/storage/swagger.php?id=",
     "tags": [{
         "name": "product",
         "description": "Insert or update products"
@@ -36,7 +36,7 @@
     "schemes": ["https"],
 
     "paths": {
-        "/@817/message": {
+        "product": {
             "post": {
                 "tags": ["product"],
                 "summary": "Insert or update products",
