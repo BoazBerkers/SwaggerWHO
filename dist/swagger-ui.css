@@ -1,3 +1,8 @@
+:root {
+    --rtsbluelight: #1a90f4;
+    --rtsbluedark: #2751c9;
+}
+
 .swagger-ui {
     color: #3b4151;
     font-family: sans-serif
@@ -3294,7 +3299,7 @@
 
 .swagger-ui .link {
     -webkit-text-decoration: none;
-    text-decoration: none
+    text-decoration: none;
 }
 
 .swagger-ui .link,
@@ -10260,7 +10265,16 @@
 
 
 /*Custom CSS WHO */
-/* 
+
+.swagger-ui .info .base-url {
+    visibility: hidden !important
+}
+
+.swagger-ui .info {
+    margin: 10px 0 !important
+}
+
+
 .swagger-ui .topbar {
     background-color: #fff;
 }
@@ -10270,23 +10284,23 @@
 }
 
 .swagger-ui .info .title {
-    color: #1a90f4;
+    color: var(--rtsbluedark);
 }
 
 .swagger-ui .info .title small {
-    background: #1a90f4;
+    background: var(--rtsbluedark);
 }
 
 .swagger-ui .topbar .download-url-wrapper input[type=text] {
-    border: 2px solid #1a90f4;
+    border: 2px solid var(--rtsbluedark);
 }
 
 .swagger-ui .topbar .download-url-wrapper .select-label select {
-    border: 2px solid #1a90f4;
+    border: 2px solid var(--rtsbluedark);
 }
 
 .swagger-ui .topbar .download-url-wrapper .download-url-button {
-    background: #1a90f4;
+    background: var(--rtsbluedark);
 }
 
 .swagger-ui .opblock.opblock-post {
@@ -10304,5 +10318,15 @@
 
 .swagger-ui .opblock.opblock-post .tab-header .tab-item.active h4 span:after {
     background: #1a90f4
-} */
+} 
+
+.swagger-ui .btn.authorize {
+    background-color: transparent;
+    border-color: var(--rtsbluelight);
+    color: var(--rtsbluelight);
+}
+
+.swagger-ui .btn.authorize svg {
+    fill: var(--rtsbluelight)
+}
 /*# sourceMappingURL=swagger-ui.css.map*/
