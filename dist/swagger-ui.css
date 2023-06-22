@@ -1,6 +1,7 @@
 :root {
     --rtsbluelight: #1a90f4;
     --rtsbluedark: #2751c9;
+    --rtsorange: #ec784f;
 }
 
 .swagger-ui {
@@ -10283,6 +10284,13 @@
     content: url('who-logo.png');
 }
 
+@media(max-width:640px) {
+    .topbar-wrapper img {
+        content: url('squared.png');
+    }
+}
+
+
 .swagger-ui .info .title {
     color: var(--rtsbluedark);
 }
@@ -10305,19 +10313,19 @@
 
 .swagger-ui .opblock.opblock-post {
     background: rgba(26, 144, 244, .1);
-    border-color: #1a90f4
+    border-color: var(--rtsbluedark)
 }
 
 .swagger-ui .opblock.opblock-post .opblock-summary-method {
-    background: #1a90f4
+    background: var(--rtsbluedark)
 }
 
 .swagger-ui .opblock.opblock-post .opblock-summary {
-    border-color: #1a90f4
+    border-color: var(--rtsbluedark)
 }
 
 .swagger-ui .opblock.opblock-post .tab-header .tab-item.active h4 span:after {
-    background: #1a90f4
+    background: var(--rtsbluedark)
 } 
 
 .swagger-ui .btn.authorize {
@@ -10328,5 +10336,10 @@
 
 .swagger-ui .btn.authorize svg {
     fill: var(--rtsbluelight)
+}
+
+.swagger-ui .btn.cancel {
+    border-color: var(--rtsorange);
+    color: var(--rtsorange);
 }
 /*# sourceMappingURL=swagger-ui.css.map*/

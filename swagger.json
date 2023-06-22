@@ -66,7 +66,7 @@
                 }
             }
         },
-        "/@820/message": {
+        "purchaseorder": {
             "post": {
                 "tags": ["purchase order"],
                 "summary": "Insert or update purchase orders",
@@ -96,7 +96,7 @@
                 }
             }
         },
-        "/@864/message": {
+        "salesOrder": {
             "post": {
                 "tags": ["sales order"],
                 "summary": "Insert or update sales orders",
@@ -574,7 +574,387 @@
                     "type": "string",
                     "maxLength": 50,
                     "example": "example-order-ref-01"
+                },
+                "sales_channel_reference": {
+                    "type": "string",
+                    "example": "example-sales-channel"
+                },
+                "owner_reference": {
+                    "type": "string",
+                    "example": "example-owner-ref"
+                },
+                "create_shipment": {
+                    "type": "boolean",
+                    "example": false
+                },
+                "customer_order_reference": {
+                    "type": "string",
+                    "example": "example-customer-order-ref"
+                },
+                "delivery_date" : {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2023-01-02 12:30:45"
+                },
+                "first_delivery_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2023-01-01 08:00:00"
+                },
+                "latest_delivery_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2023-01-04 18:00:00"
+                },
+                "erp_pick_list_description": {
+                    "type": "string",
+                    "example": "example-pick-list"
+                },
+                "giftservice_hashgifts": {
+                    "type": "string",
+                    "example": "Yes"
+                },
+                "giftservice_message": {
+                    "type": "string",
+                    "example": "Congratulations"
+                },
+                "on_hold": {
+                    "type": "string",
+                    "example": "No"
+                },
+                "order_description": {
+                    "type": "string",
+                    "example": "example-order-desc"
+                },
+                "order_entry_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2022-11-30 16:12:56"
+                },
+                "order_reference_extra": {
+                    "type": "string",
+                    "example": "example-order-desc-extra"
+                },
+                "order_type": {
+                    "type": "string",
+                    "example": "SO"
+                },
+                "partial_delivery_allowed": {
+                    "type": "string",
+                    "example": "Yes"
+                },
+                "picking_task_name": {
+                    "type": "string",
+                    "example": "example-pick-task-name"
+                },
+                "picking_task_reference": {
+                    "type": "string",
+                    "example": "example-pick-task-ref"
+                },
+                "priority": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "process_type_reference": {
+                    "type": "string",
+                    "example": "OP03"
+                },
+                "reservation_reference": {
+                    "type": "string",
+                    "example": "example-reservation"
+                },
+                "send_list_description": {
+                    "type": "string",
+                    "example": "example-send-list"
+                },
+                "send_list_reference": {
+                    "type": "string",
+                    "example": "example-send-list-ref"
+                },
+                "send_type_reference": {
+                    "type": "string",
+                    "example": "example-send-type-ref"
+                },
+                "send_type_classification": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#/definitions/send_type_classification"
+                    }
+                },
+                "shipping_agent_code": {
+                    "type": "string",
+                    "example": "example-shipping-agent"
+                },
+                "shipping_agent_service_code": {
+                    "type": "string",
+                    "example": "example-ship-service-code"
+                },
+                "shipment_reference": {
+                    "type": "string",
+                    "example": "example-ship-ref"
+                },
+                "shipment_type": {
+                    "type": "string",
+                    "example": "example-ship-type"
+                },
+                "status": {
+                    "type": "string",
+                    "example": "processing"
+                },
+                "warehouse_reference": {
+                    "type": "string",
+                    "example": "example-warehouse-ref"
+                },
+                "route_number": {
+                    "type": "string",
+                    "example": "example-route"
+                },
+                "currency_reference": {
+                    "type": "string",
+                    "example": "EUR"
+                },
+                "order_total_price": {
+                    "type": "double",
+                    "example": 14.49
+                },
+                "order_total_tax": {
+                    "type": "double",
+                    "example": 3.33
+                },
+                "order_total_price_incl_tax": {
+                    "type": "double",
+                    "example": 17.82
+                },
+                "order_discount_price": {
+                    "type": "double",
+                    "example": 2.00
+                },
+                "order_shipping_costs": {
+                    "type": "double",
+                    "example": 2.25
+                },
+                "order_shipping_tax": {
+                    "type": "double",
+                    "example": 0.75
+                },
+                "order_shipping_costs_incl_tax": {
+                    "type": "double",
+                    "example": 3.00                    
+                },
+                "run_number": {
+                    "type": "string",
+                    "example": "example-run-no"
+                },
+                "customer": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#/definitions/relation"
+                    }
+                },
+                "invoice": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#/definitions/relation"
+                    }
+                },
+                "pod": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#/definitions/relation"
+                    }
+                },
+                "sender": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#/definitions/relation"
+                    }
+                },
+                "pickup": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#/definitions/relation"
+                    }
+                },
+                "order_lines": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#/definitions/sales_order_lines"
+                    }
                 }
+            }
+        },
+
+        "sales_order_lines": {
+            "type": "object",
+            "properties": {
+                "update_code": {
+                    "type": "string",
+                    "enum": ["NEW", "INSERT_AND_UPDATE", "DELETE"]
+                },
+                "order_reference": {
+                    "type": "string",
+                    "maxLength": 50,
+                    "example": "example-order-ref-01"
+                },
+                "order_description": {
+                    "type": "string",
+                    "maxLength": 250,
+                    "example": "example-order-desc"
+                },
+                "order_line_reference": {
+                    "type": "string",
+                    "maxLength": 50,
+                    "example": "example-line-ref-01"
+                },
+                "product_reference": {
+                    "type": "string",
+                    "example": "example-product-ref"
+                },
+                "base_product_reference": {
+                    "type": "string",
+                    "example": "example-base-product-ref"
+                },
+                "process_type_code": {
+                    "type": "string",
+                    "example": "OP03"
+                },
+                "product_variant": {
+                    "type": "integer",
+                    "example": 4
+                },
+                "product_sub_variant": {
+                    "type": "integer",
+                    "example": 56
+                },
+                "customer_order_reference": {
+                    "type": "string",
+                    "example": "example-customer-order-ref"
+                },
+                "order_line_quantity": {
+                    "type": "integer",
+                    "example": 12
+                },
+                "picking_line_reference": {
+                    "type": "string",
+                    "example": "example-pick-line-ref"
+                },
+                "picking_line_quantity": {
+                    "type": "integer",
+                    "example": 6
+                },
+                "order_line_description": {
+                    "type": "string",
+                    "example": "example-order-line-desc"
+                },
+                "run_number": {
+                    "type": "string",
+                    "example": "example-run-no"
+                },
+                "packaging_reference": {
+                    "type": "string",
+                    "example": "example-packaging-ref"
+                },
+                "reservation_reference": {
+                    "type": "string",
+                    "example": "example-res-ref"
+                },
+                "batch_reference": {
+                    "type": "string",
+                    "example": "example-batch-ref"
+                },
+                "picking_task_reference": {
+                    "type": "string",
+                    "example": "example-pick-task-ref"
+                },
+                "erp_pick_list_line_reference": {
+                    "type": "string",
+                    "example": "example-erp-pick-line-ref"
+                },
+                "ool_shipment_reference": {
+                    "type": "string",
+                    "example": "example-ool-ship-ref"
+                },
+                "isagift": {
+                    "type": "string",
+                    "example": "Yes"
+                },
+                "scan_message": {
+                    "type": "string",
+                    "example": "example-scan-message"
+                },
+                "ool_sorting_code": {
+                    "type": "string",
+                    "example": "example-ool-sort-code"
+                },
+                "price": {
+                    "type": "double",
+                    "example": 12.49
+                },
+                "price_incl_tax": {
+                    "type": "double",
+                    "example": 14.99
+                },
+                "line_total_price": {
+                    "type": "double",
+                    "example": 22.22
+                },
+                "properties": {
+                    "type": "array",
+                    "xml": {
+                        "wrapped": true
+                    },
+                    "items": {
+                        "xml": {
+                            "name": "tag"
+                        },
+                        "$ref": "#definitions/properties"
+                    }
+                }
+            },
+            "xml": {
+                "name": "order_lines"
             }
         },
 
@@ -584,7 +964,8 @@
             "properties": {
                 "relation_type": {
                     "type": "string",
-                    "enum": ["supplier", "pod", "customer", "invoice", "sender", "pickup"]
+                    "enum": ["supplier", "pod", "customer", "invoice", "sender", "pickup"],
+                    "example": "relation-type"
                 },
                 "update_code": {
                     "type": "string",
@@ -704,6 +1085,7 @@
                 }
             }
         },
+
         "properties": {
             "type": "object",
             "properties": {
@@ -717,7 +1099,40 @@
                 }
             },
             "xml": {
-                "name": "product_ids"
+                "name": "properties"
+            }
+        },
+
+        "send_type_classification": {
+            "type": "object",
+            "properties": {
+                "send_type_code": {
+                    "type": "string",
+                    "example": "example-send-type-code"
+                },
+                "st_class_reference": {
+                    "type": "string",
+                    "example": "example-st-class-ref"
+                },
+                "st_agent_shipping_code": {
+                    "type": "string",
+                    "example": "example-st-agent-ship-code"
+                },
+                "st_agent_shipping_service_code": {
+                    "type": "string",
+                    "example": "example-st-agent-ship-service-code"
+                },
+                "st_class_description": {
+                    "type": "string",
+                    "example": "example-st-class-desc"
+                },
+                "st_sender_reference": {
+                    "type": "string",
+                    "example": "example-st-sender-ref"
+                }
+            },
+            "xml": {
+                "name": "send_type_classification"
             }
         },
 
