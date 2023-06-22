@@ -125,6 +125,36 @@
                     }
                 }
             }
+        },
+        "relation": {
+            "post": {
+                "tags": ["relation"],
+                "summary": "Insert or update relations",
+                "description": "",
+                "operationId": "postrelation",
+                "consumes": ["application/json", "application/xml"],
+                "produces": ["application/json", "application/xml"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Relation to insert or update",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/relation"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
         }
     },
     "securityDefinitions": {
