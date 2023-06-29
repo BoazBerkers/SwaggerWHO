@@ -10286,7 +10286,7 @@
 
 @media(max-width:640px) {
     .topbar-wrapper img {
-        content: url('squared.png');
+        content: url('who-icon.svg');
     }
 }
 
@@ -10342,4 +10342,12 @@
     border-color: var(--rtsorange);
     color: var(--rtsorange);
 }
+
+/* .swagger-ui section.models .model-container {
+    background: rgba(26, 144, 244, .30)
+}
+
+.swagger-ui section.models .model-container:hover {
+    background: rgba(26, 144, 244, .15)
+} */
 /*# sourceMappingURL=swagger-ui.css.map*/
