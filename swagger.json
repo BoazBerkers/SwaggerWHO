@@ -18,7 +18,7 @@
     "tags": [{
         "name": "product",
         "description": "Insert or update products"
-    }, {
+    },  {
         "name": "purchase order",
         "description": "Insert or update purchase orders",
         "externalDocs": {
@@ -997,7 +997,7 @@
                     "example": 14.99
                 },
                 "line_total_price": {
-                    "type": "double",
+                    "type": "float",
                     "example": 22.22
                 },
                 "properties": {
