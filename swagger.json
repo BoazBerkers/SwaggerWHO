@@ -28,9 +28,6 @@
     }, {
         "name": "sales order",
         "description": "Insert or update sales orders"
-    }, {
-        "name": "relation",
-        "description": "Insert or update relations"
     }],
 
     "schemes": ["https"],
@@ -96,7 +93,7 @@
                 }
             }
         },
-        "salesOrder": {
+        "salesorder": {
             "post": {
                 "tags": ["sales order"],
                 "summary": "Insert or update sales orders",
@@ -126,23 +123,56 @@
                 }
             }
         },
-        "relation": {
-            "post": {
-                "tags": ["relation"],
-                "summary": "Insert or update relations",
+        "shipment": {
+            "get": {
+                "tags": ["sales order"],
+                "summary": "Shipment message",
                 "description": "",
-                "operationId": "postrelation",
+                "operationId": "getshipment",
                 "consumes": ["application/json", "application/xml"],
                 "produces": ["application/json", "application/xml"],
-                "parameters": [{
-                    "in": "body",
-                    "name": "body",
-                    "description": "Relation to insert or update",
-                    "required": true,
-                    "schema": {
-                        "$ref": "#/definitions/relation"
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
                     }
-                }],
+                }
+            }
+        },
+        "delivery": {
+            "get": {
+                "tags": ["purchase order"],
+                "summary": "Confirmed delivery",
+                "description": "",
+                "operationId": "getdelivery",
+                "consumes": ["application/json", "application/xml"],
+                "produces": ["application/json", "application/xml"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "stockmutation": {
+            "get": {
+                "tags": ["product"],
+                "summary": "Stock mutation",
+                "description": "",
+                "operationId": "getmutation",
+                "consumes": ["application/json", "application/xml"],
+                "produces": ["application/json", "application/xml"],
                 "responses": {
                     "200": {
                         "description": "OK"
