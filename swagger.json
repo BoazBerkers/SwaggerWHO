@@ -63,7 +63,7 @@
                 }
             }
         },
-        "purchaseorder": {
+        "purchaseOrder": {
             "post": {
                 "tags": ["purchase order"],
                 "summary": "Insert or update purchase orders",
@@ -93,7 +93,7 @@
                 }
             }
         },
-        "salesorder": {
+        "salesOrder": {
             "post": {
                 "tags": ["sales order"],
                 "summary": "Insert or update sales orders",
