@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "description": "This is the API documentation for Warehouse Online",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "title": "Warehouse Online - API Documentation",
         "termsOfService": "https://www.warehouse-online.nl/over-ons/general-conditions",
         "contact": {
